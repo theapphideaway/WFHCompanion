@@ -2,6 +2,7 @@ package com.ianschoenrock.wfhcompanion.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity(tableName = "note_table")
 class Note(
