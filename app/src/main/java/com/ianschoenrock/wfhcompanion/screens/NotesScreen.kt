@@ -1,6 +1,8 @@
 package com.ianschoenrock.wfhcompanion.screens
 
 import android.content.res.Configuration
+import android.util.Log
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -120,6 +122,9 @@ fun NotesScreen(){
             }
         }
         else{
+            BackHandler() {
+                selectedNote.value = ""
+            }
             DetailsScreen(content = selectedNote.value)
         }
     }
@@ -128,6 +133,7 @@ fun NotesScreen(){
 
 @Composable 
 fun DetailsScreen(content: String){
+
     Column(verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()) {
